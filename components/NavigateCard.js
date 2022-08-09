@@ -6,11 +6,15 @@ import { GOOGLE_MAPS_APIKEY } from "@env";
 import { useDispatch } from "react-redux";
 import { setDestination } from "../slices/navSlice";
 import { useNavigation } from "@react-navigation/native";
+//import Geolocation from '@react-native-community/geolocation';
+
 
 const NavigateCard = () => {
 
     const dispatch = useDispatch();
     const navigation = useNavigation();
+    //Geolocation.getCurrentPosition(info => console.log(info));
+    
 
   return (
     <SafeAreaView style={tw`bg-white flex-1`}>
@@ -38,6 +42,8 @@ const NavigateCard = () => {
                 }}
                 nearbyPlacesAPI="GooglePlacesSearch"
                 debounce={300}
+                // currentLocation={true}
+                // currentLocationLabel='Current location'
             />
         </View>
       </View>
@@ -46,6 +52,7 @@ const NavigateCard = () => {
 };
 
 export default NavigateCard
+
 
 const toInputBoxStyles = StyleSheet.create({
     container: {
