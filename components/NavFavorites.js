@@ -1,10 +1,7 @@
-import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native'
 import React from 'react'
 import tw from 'tailwind-react-native-classnames';
-import { useSelector } from "react-redux";
-import { selectOrigin } from "../slices/navSlice";
 import { Icon } from "react-native-elements";
-import { useNavigation } from "@react-navigation/native";
 
 const data = [
     {
@@ -34,7 +31,7 @@ const NavFavorites = () => {
             )}
             renderItem={({ item: {location, destination, icon } }) => (
                 <TouchableOpacity
-                 style={tw`flex-row items-cenmter p-5`}
+                 style={tw`flex-row items-center p-5`}
                 >
                 <Icon 
                 style={tw`mr-4 rounded-full bg-gray-300 p-3`} 
